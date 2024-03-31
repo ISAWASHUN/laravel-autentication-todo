@@ -20,6 +20,8 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
+        // runメソッド内に追加して順番を入れ替える
+        $this->call(UsersTableSeeder::class);
         $this->call(FoldersTableSeeder::class);
         $this->call(TasksTableSeeder::class);
     }

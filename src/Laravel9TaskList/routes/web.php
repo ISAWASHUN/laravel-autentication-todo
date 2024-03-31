@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 /* TaskControllerクラスを名前空間でインポートする */
 use App\Http\Controllers\TaskController;
 use App\Http\Controllers\FolderController;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,3 +42,5 @@ Route::post('/folders/{id}/delete', [FolderController::class,"delete"]);
 
 Route::get('/folders/{id}/tasks/{task_id}/delete', [TaskController::class,"showDeleteForm"])->name('tasks.delete');
 Route::post('/folders/{id}/tasks/{task_id}/delete', [TaskController::class,"delete"]);
+
+Auth::routes();
