@@ -35,3 +35,7 @@ Route::post('folders/{id}/tasks/create', [TaskController::class,"create"]);
 
 Route::get('/folders/{id}/tasks/{task_id}/edit', [TaskController::class,"showEditForm"])->name('tasks.edit');
 Route::post('/folders/{id}/tasks/{task_id}/edit', [TaskController::class,"edit"]);
+
+/* folders new delete page */
+Route::get('/folders/{id}/delete', [FolderController::class,"showDeleteForm"])->name('folders.delete');
+Route::post('/folders/{id}/delete', [FolderController::class,"delete"]);

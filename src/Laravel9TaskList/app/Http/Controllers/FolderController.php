@@ -45,4 +45,27 @@ class FolderController extends Controller
             'id' => $folder->id,
         ]);
     }
+
+    public function showDeleteForm(int $id)
+    {
+        $folder = Folder::find($id);
+
+        return view('folders/delete', [
+            'folder_id' => $folder->id,
+            'folder_title' => $folder->title,
+        ]);
+    }
+
+    public function delete(int $id)
+    {
+        $folder = Folder::find($id);
+        $folder->tasks()->delete();
+        $folder->delete();
+
+        $folder = Folder::first();
+
+        return redirect()->route('tasks.index', [
+            'id' => $folder->id,
+        ]);
+    }
 }
