@@ -42,7 +42,7 @@
                                 </a>
                             </td>
                             <td><a href="{{ route('tasks.edit', ['id' => $task->folder_id, 'task_id' => $task->id]) }}">編集</a></td>
-                            <td><a href="{{ route('folders.delete', ['id' => $folder->id]) }}">削除</a></td>
+                            <td><a href="{{ route('folders.delete', ['id' => $folder->id, 'task_id' => $task_id]) }}">削除</a></td>
                         </tr>
                         @endforeach
                     </table>
