@@ -20,11 +20,14 @@ use App\Http\Controllers\FolderController;
 Route::get('/', function () {
     return view('welcome');
 });
-/* index page */
+
 Route::get("/folders/{id}/tasks", [TaskController::class,"index"])->name("tasks.index");
 
 Route::get('/folders/create', [FolderController::class,"showCreateForm"])->name('folders.create');
 Route::post('/folders/create', [FolderController::class,"create"]);
+
+Route::get('/folders/{id}/edit', [FolderController::class,"showEditForm"])->name('folders.edit');
+Route::post('/folders/{id}/edit', [FolderController::class,"edit"]);
 
 Route::
 get('/folders/{id}/tasks/create', [TaskController::class,"showCreateForm"])->name('tasks.create');

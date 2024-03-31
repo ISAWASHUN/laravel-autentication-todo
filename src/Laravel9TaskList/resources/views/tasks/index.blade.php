@@ -41,7 +41,7 @@
                                     {{ $folder->title }}
                                 </a>
                             </td>
-                            <td><a href="#">編集</a></td>
+                            <td><a href="{{ route('folders.edit', ['id' => $folder->id]) }}">編集</a></td>
                             <td><a href="#">削除</a></td>
                         </tr>
                         @endforeach
